@@ -1,0 +1,17 @@
+FROM python:3.8.0-buster
+
+#Making a workdir
+
+WORKDIR /facecomparison
+
+#Installing Dependencies
+
+COPY requirments.txt .
+RUN pip install -r requirments.txt
+
+#Copying Scource Codes
+COPY /facecomparison .
+
+#Run the applications
+CMD ["python", "main.py"]
+CMD ["python", "compare_image.py"]
